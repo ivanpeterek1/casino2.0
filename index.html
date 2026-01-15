@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+ <html lang="cs">
+     <head>
+         <meta charset="UTF-8">
+          <title>Mini Casino 🎰</title> 
+          <link rel="stylesheet" href="./css/style.css"> 
+        </head> 
+        <body>
+
+             <h1>🎰 Mini Casino</h1> 
+             <div class="balance">
+    Zůstatek: <span id="money"></span> Kč
+</div>
+
+<div class="add-money">
+    <button onclick="addMoney(100)">➕ Přidat 100 Kč</button>
+    <button onclick="addMoney(500)">➕ Přidat 500 Kč</button>
+</div>
+             <p>Vyber si hru</p> 
+             
+             <div class="games">
+                 <a href="slots.html" class="game-card"> 
+                    <img src="images/slots.jpg" alt="Automat"> 
+                    <h2>🎰 Automat</h2>
+                     <p>Klasický jednoruký bandita. Tref tři stejné symboly a vyhraj!</p> 
+                    </a>
+                     <a href="roulette.html" class="game-card"> ¨
+                        <img src="images/roulette.jpg" alt="Ruleta">
+                         <h2>🎯 Ruleta</h2> 
+                         <p>Vsadíš na číslo, barvu nebo sudé? Štěstí rozhodne.</p> 
+                        </a> <a href="blackjack.html" class="game-card">
+                             <img src="images/blackjack.jpg" alt="Blackjack"> 
+                             <h2>🃏 Blackjack</h2>
+                              <p>Přibliž se k 21, ale nepřesáhni. Poraz krupiéra.</p> 
+                            </a> 
+                        </div>
+                        <script src="./js/money.js"></script>
+                     </body>
+                      </html>

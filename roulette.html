@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Ruleta 🎯</title>
+    <link rel="stylesheet" href="./css/roulette.css">
+</head>
+<body>
+
+<a href="index.html" class="back">⬅ Zpět do menu</a>
+
+<h1>🎯 Ruleta</h1>
+<div class="balance">Zůstatek: <span id="money"></span> Kč</div>
+
+<div class="bet-control">
+    <button onclick="changeBet(-50)">➖</button>
+    <strong>Sázka: <span id="bet">50</span> Kč</strong>
+    <button onclick="changeBet(50)">➕</button>
+</div>
+
+<div class="number-bet">
+    <label>Sázka na číslo:</label>
+    <select id="numberSelect"></select>
+    <button onclick="betNumber()">Vsadit číslo (36×)</button>
+</div>
+
+<div class="roulette-container">
+    <div class="pointer">▼</div>
+
+    <div class="wheel" id="wheel">
+        <div class="wheel-colors"></div>
+        <div class="number">?</div>
+    </div>
+
+    <div class="bets">
+        <button onclick="betColor('red')" class="red">Červená (2×)</button>
+        <button onclick="betColor('black')" class="black">Černá (2×)</button>
+        <button onclick="betParity('even')" class="even">Sudé (2×)</button>
+        <button onclick="betParity('odd')" class="odd">Liché (2×)</button>
+    </div>
+</div>
+
+<p id="message"></p>
+
+<script src="./js/money.js"></script>
+<script src="./js/roulette.js"></script>
+</body>
+</html>
