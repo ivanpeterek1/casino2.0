@@ -8,7 +8,6 @@ const redNumbers = [
 let betAmount = 50;
 let spinning = false;
 
-/* ===== SÁZKA ===== */
 function changeBet(amount) {
     betAmount += amount;
     if (betAmount < 50) betAmount = 50;
@@ -16,7 +15,6 @@ function changeBet(amount) {
     document.getElementById("bet").textContent = betAmount;
 }
 
-/* ===== LOGIKA ===== */
 function spinWheel() {
     return numbers[Math.floor(Math.random() * numbers.length)];
 }
@@ -55,16 +53,15 @@ function placeBet(checkWin, label, multiplier = 2) {
         if (checkWin(result)) {
             const win = betAmount * multiplier;
             setMoney(getMoney() + win);
-            setMessage(`🎉 Výhra ${win} Kč! Padlo ${result}`);
+            setMessage(`Výhra ${win} Kč! Padlo ${result}`);
         } else {
-            setMessage(`❌ Prohra. Padlo ${result}`);
+            setMessage(`Prohra. Padlo ${result}`);
         }
 
         spinning = false;
     }, 2800);
 }
 
-/* ===== TYPY SÁZEK ===== */
 function betColor(color) {
     placeBet(n => getColor(n) === color, color);
 }
@@ -86,7 +83,6 @@ function setMessage(text) {
     document.getElementById("message").textContent = text;
 }
 
-/* ===== SELECT ===== */
 const sel = document.getElementById("numberSelect");
 for (let i = 0; i <= 36; i++) {
     const o = document.createElement("option");
@@ -94,3 +90,4 @@ for (let i = 0; i <= 36; i++) {
     o.textContent = i;
     sel.appendChild(o);
 }
+
