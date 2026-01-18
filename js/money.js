@@ -1,5 +1,5 @@
 if (!localStorage.getItem("money")) {
-    localStorage.setItem("money", 100);
+    localStorage.setItem("money", 500);
 }
 
 

@@ -30,13 +30,13 @@ function placeBet(checkWin, label, multiplier = 2) {
 
     let money = getMoney();
     if (money < betAmount) {
-        setMessage("❌ Nemáš dost peněz!");
+        setMessage("You don't have enough money");
         spinning = false;
         return;
     }
 
     setMoney(money - betAmount);
-    setMessage(`🎯 Sázka: ${label}`);
+    setMessage(`Bet: ${label}`);
 
     const result = spinWheel();
     const wheel = document.getElementById("wheel");
@@ -53,9 +53,9 @@ function placeBet(checkWin, label, multiplier = 2) {
         if (checkWin(result)) {
             const win = betAmount * multiplier;
             setMoney(getMoney() + win);
-            setMessage(`Výhra ${win} Kč! Padlo ${result}`);
+            setMessage(`Win ${win} $ The ball dropped on  ${result}`);
         } else {
-            setMessage(`Prohra. Padlo ${result}`);
+            setMessage(`Loss The ball dropped on ${result}`);
         }
 
         spinning = false;
@@ -75,8 +75,8 @@ function betParity(type) {
 
 function betNumber() {
     const v = document.getElementById("numberSelect").value;
-    if (v === "") return setMessage("Vyber číslo!");
-    placeBet(n => n === +v, `Číslo ${v}`, 36);
+    if (v === "") return setMessage("Select a number");
+    placeBet(n => n === +v, `number ${v}`, 36);
 }
 
 function setMessage(text) {

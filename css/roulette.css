@@ -52,7 +52,6 @@ body {
     overflow: hidden;
 }
 
-/* jednoduché barvy v kole */
 .wheel-colors {
     position: absolute;
     width: 100%;

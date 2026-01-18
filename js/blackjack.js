@@ -7,7 +7,6 @@ let gameOver = false;
 
 startGame();
 
-/* ---------- SÁZENÍ ---------- */
 window.changeBet = function (amount) {
     betAmount += amount;
     if (betAmount < 50) betAmount = 50;
@@ -15,11 +14,10 @@ window.changeBet = function (amount) {
     document.getElementById("bet").textContent = betAmount;
 };
 
-/* ---------- START HRY ---------- */
 function startGame() {
     gameOver = false;
     deck = new Deck();
-    player = new Player("Hráč");
+    player = new Player("player");
     dealer = new Dealer("Dealer");
 
     player.hit(deck.draw());
@@ -34,14 +32,13 @@ function startGame() {
     render();
 }
 
-/* ---------- OVLÁDÁNÍ ---------- */
 document.getElementById("hit").onclick = () => {
     if (gameOver) return;
 
     player.hit(deck.draw());
     render();
 
-    if (player.getScore() > 21) endGame();
+    if (player.getScore() >= 21) endGame();
 };
 
 document.getElementById("stand").onclick = () => {
@@ -65,13 +62,13 @@ function endGame() {
     let money = getMoney();
 
     if (p > 21) {
-        msg = "❌ Prohrál jsi";
+        msg = "You lost";
         setMoney(money - betAmount);
     } else if (d > 21 || p > d) {
-        msg = "🎉 Vyhrál jsi";
+        msg = "You win";
         setMoney(money + betAmount);
     } else if (p < d) {
-        msg = "❌ Prohrál jsi";
+        msg = "You lost";
         setMoney(money - betAmount);
     }
 
@@ -82,7 +79,6 @@ function endGame() {
     render();
 }
 
-/* ---------- UI ---------- */
 function toggleButtons(active) {
     document.getElementById("hit").disabled = !active;
     document.getElementById("stand").disabled = !active;

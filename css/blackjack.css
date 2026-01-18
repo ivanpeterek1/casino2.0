@@ -14,20 +14,17 @@ a {
     margin-bottom: 20px;
 }
 
-/* Nadpis */
 h1 {
     font-size: 42px;
     margin-bottom: 10px;
 }
 
-/* Zůstatek */
 .balance {
     font-size: 22px;
     color: #ffd166;
     margin-bottom: 20px;
 }
 
-/* Sázky */
 .bet-control {
     display: inline-flex;
     align-items: center;
@@ -50,14 +47,12 @@ h1 {
     background: #ffe08a;
 }
 
-/* Herní sekce */
 h2 {
     margin-top: 25px;
     margin-bottom: 10px;
     color: #ffd166;
 }
 
-/* Karty */
 #player-cards,
 #dealer-cards {
     min-height: 60px;
@@ -76,7 +71,6 @@ h2 {
     font-weight: bold;
 }
 
-/* Ovládací tlačítka */
 .controls {
     margin-top: 30px;
 }
@@ -101,14 +95,12 @@ h2 {
     cursor: not-allowed;
 }
 
-/* Zprávy */
 #message {
     margin-top: 25px;
     font-size: 22px;
     min-height: 30px;
 }
 
-/* Reset tlačítko – zvýraznění */
 #reset {
     background: #ef476f;
 }

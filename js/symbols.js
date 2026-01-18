@@ -1,8 +1,8 @@
 class Symbol {
     constructor(icon, chance, payout) {
-        this.icon = icon;       // emoji / obrázek
-        this.chance = chance;   // váha (pravděpodobnost)
-        this.payout = payout;   // výhra při 3 stejných
+        this.icon = icon;       
+        this.chance = chance;   
+        this.payout = payout;   
     }
 }
 

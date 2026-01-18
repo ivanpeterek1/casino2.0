@@ -19,7 +19,7 @@ function pullLever() {
 function spin() {
     let money = getMoney();
     if (money < 10) {
-        setMessage("Nemáš dost peněz!");
+        setMessage("You don't have enough money");
         spinning = false;
         return;
     }
@@ -27,7 +27,7 @@ function spin() {
     money -= 10;
     setMoney(money);
 
-    setMessage("🎰 Točí se...");
+    setMessage("Spining");
 
     const result = machine.spin();
 
@@ -46,7 +46,7 @@ const win = machine.calculateWin(result);
 
 if (win > 0) {
     setMoney(getMoney() + win);
-    setMessage(`🎉 Výhra ${win} Kč!`);
+    setMessage(`Win ${win} $`);
 
     const slots = document.querySelectorAll(".slot");
     slots.forEach(s => s.classList.add("win"));
@@ -56,7 +56,7 @@ if (win > 0) {
     }, 2000);
 
 } else {
-    setMessage("Zkus to znovu!");
+    setMessage("Try again");
 }
 
 

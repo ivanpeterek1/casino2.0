@@ -25,6 +25,6 @@ export class Deck {
     }
 
     draw() {
-        return this.cards.pop(); // nikdy se nevrátí → žádná duplicita
+        return this.cards.pop(); 
     }
 }
